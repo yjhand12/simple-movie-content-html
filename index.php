@@ -26,10 +26,9 @@
                 $list_anime = include_once 'list_anime.php';
 
                 function compareTitles($a, $b) {
-                    return strcmp($a["title"], $b["title"]);
+                    return strcmp($a->title, $b->title);
                 }
-
-                usort($list_anime, 'compareTitles');
+                usort($content, 'compareTitles');
 
                 foreach ($content as $anime) {
                     ?>

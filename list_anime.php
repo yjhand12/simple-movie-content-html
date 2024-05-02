@@ -21,9 +21,11 @@
         ["title" => "Spy Classroom", "description" => "Action, Comedy, Drama, Fantasy, Mystery", "image" => "image_19.png"],
         ["title" => "Kimetsu no Yaiba", "description" => "Action, Adventure, Fantasy, Shounen, Supernatural, Demons", "image" => "image_20.png"],
     ];
+
     foreach ($list_anime as $list_animes) {
         $content[] = (object) $list_animes;
     }
-
+    
     return $list_anime;
+
 ?>
