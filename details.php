@@ -1,6 +1,14 @@
 <?php
 $list_anime = include_once 'list_anime.php';
-$anime = $content[0];
+$id = $_GET['id'];
+
+$selectedAnime = null;
+foreach ($list_anime as $anime) {
+    if ($anime->id == $id) {
+            $selectedAnime = $anime;
+            break;
+            }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +18,7 @@ $anime = $content[0];
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>WIND BREAKER</title>
+    <title><?php echo $anime->title; ?></title>
 </head>
 <body>
     <?php
@@ -67,11 +75,11 @@ $anime = $content[0];
                 </div>
                 <div class="anime-card">
                     <div class="card-details">
-                        <img src="img/image_1.png" alt="detail-image" width="220px" height="300px" class="detail-image">
+                        <img src="img/<?php echo $anime->image; ?>" alt="detail-image" width="220px" height="300px" class="detail-image">
                         <div class="anime-info">
                             <div class="anime-title">
                                 <h2 class="title"><?php echo $anime->title; ?></h2>
-                                <h3 class="japanese-title">WIND BREAKER</h3>
+                                <h3 class="japanese-title"><?php echo $anime->title; ?></h3>
                             </div>
                             <div class="anime-description">
                                 <div class="left-description">
