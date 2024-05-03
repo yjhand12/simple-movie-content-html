@@ -9,7 +9,7 @@ include '../koneksi.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title>Document</title>
+    <title>List Anime</title>
     <style>
         .modal {
             display: none; /* Sembunyikan modal secara default */
@@ -62,10 +62,10 @@ include '../koneksi.php';
                     <h2 class="admin-title">List Anime</h2>
                 </div>
                 <div class="anime-data">
-                    <button class="add-anime-button" onclick="document.getElementById('formAddAnimeModal').style.display='block'">Tambah Data Anime</button>
+                    <button class="add-data-button" onclick="document.getElementById('formAddAnimeModal').style.display='block'">Tambah Data Anime</button>
                     <div class="list-anime-table">
                         <table>
-                            <tr>
+                            <tr class="head">
                                 <th>No</th>
                                 <th>Title</th>
                                 <th>Japanase Title</th>
@@ -96,9 +96,9 @@ include '../koneksi.php';
                                         ?>
                                     </td>
                                     <td><img src="../assets/img/<?php echo $anime['image']; ?>" alt="<?php echo $anime['title']; ?> " height="100px" width="auto"></td>
-                                    <td><?php echo $anime['videos']; ?></td>
-                                    <td><a href="">Edit</a>
-                                        <a href="">Hapus</a>
+                                    <td><a href=""><?php echo $anime['videos']; ?></a></td>
+                                    <td><button class="edit-data-button">Edit</button>
+                                        <button class="delete-data-button">Delete</button>
                                     </td>
                                 </tr>
                                 <?php

@@ -247,7 +247,7 @@ footer{
 .anime-details p.sinopsis{
     line-height: 1.6;
 }
-.add-anime-button{
+.add-data-button{
     padding: 5px 10px 5px 10px;
     border: none;
     border-radius: 5px;
@@ -255,7 +255,77 @@ footer{
     font-size: 15px;
     color: #10141c;
     cursor: pointer;
+    margin-bottom: 10px;
+}
+.edit-data-button{
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #63b4ff;
+    font-size: 15px;
+    color: #fafafa;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.delete-data-button{
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff8263;
+    font-size: 15px;
+    color: #fafafa;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 .admin-content{
     min-height: 100vh;
+    padding: 30px 50px 40px 50px;
+}
+.list-anime-table{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f1e3b5;
+}
+.list-anime-table table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.list-anime-table th, .list-anime-table td{
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+.list-anime-table tr th{
+    background-color: #ffd863;
+}
+.list-anime-table tr:hover{
+    background-color: #fafafa;
+}
+.list-anime-table tr th,
+.list-anime-table tr td {
+    border: 1px solid rgb(124, 121, 121);
+}
+.list-anime-table td:nth-child(1) {
+    width: 20px;
+    text-align: center;
+}
+.list-anime-table td:nth-child(2) {
+    width: 200px;
+}
+.list-anime-table td:nth-child(3) {
+    width: 200px;
+}
+.list-anime-table td:nth-child(4) {
+    width: auto;
+}
+.list-anime-table td:nth-child(5) {
+    width: 30px;
+    text-align: center;
+}
+.list-anime-table td:nth-child(6) {
+    width: 200px;
+    text-align: center;
+}
+.list-anime-table td:nth-child(7) {
+    width: 100px;
 }
