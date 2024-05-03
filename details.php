@@ -22,11 +22,11 @@ foreach ($list_anime as $anime) {
 </head>
 <body>
     <?php
-    include 'sidebar.php';
+    include 'assets/page/sidebar.php';
     ?>
     <main>
         <?php
-        include 'navbar.php';
+        include 'assets/page/navbar.php';
         ?>
         <div class="container">
             <div class="anime-details">
@@ -132,7 +132,7 @@ foreach ($list_anime as $anime) {
         </div>
     </main>
     <?php
-    include 'footer.php';
+    include 'assets/page/footer.php';
     ?>
 </body>
 </html>

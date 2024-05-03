@@ -10,11 +10,11 @@
 </head>
 <body>
     <?php
-    include_once 'sidebar.php';
+    include_once 'assets/page/sidebar.php';
     ?>
     <main>
         <?php
-        include_once 'navbar.php';
+        include_once 'assets/page/navbar.php';
         ?>
         <div class="container">
             <div class="content">
@@ -53,7 +53,7 @@
         </div>
     </main>
     <?php
-    include_once 'footer.php';
+    include_once 'assets/page/footer.php';
     ?>
 </body>
 </html>
