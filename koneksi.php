@@ -1,20 +1,20 @@
 <?php
-$servername = "localhost";
-$database = "web_anime";
-$username = "root";
-$password = "";
- 
-// Create connection
- 
-$conn = mysqli_connect($servername, $username, $password, $database);
- 
-// Check connection
- 
-if (!$conn) {
- 
-    die("Connection failed: " . mysqli_connect_error());
- 
+
+class Database{
+    private $host = "localhost";
+    private $database = "web_anime";
+    private $username = "root";
+    private $password = "";
+
+    public function __construct(){
+        $this->connection = new mysqli($this->host, $this->username, $this->password, $this->database);
+
+        if($connection){
+            echo "Database berhasil";
+        }else{
+            echo "Database gagal";
+        }
+    }
 }
-echo "Connected successfully";
-mysqli_close($conn);
+$database = new Database;
 ?>
