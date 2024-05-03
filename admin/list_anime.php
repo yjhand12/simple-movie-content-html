@@ -7,7 +7,7 @@ include '../koneksi.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>Document</title>
     <style>
@@ -62,7 +62,7 @@ include '../koneksi.php';
                     <h2 class="admin-title">List Anime</h2>
                 </div>
                 <div class="anime-data">
-                    <button class="add-anime-button" onclick="document.getElementById('formAddAnimeModal').style.display='block'">+ Tambah Data</button>
+                    <button class="add-anime-button" onclick="document.getElementById('formAddAnimeModal').style.display='block'">Tambah Data Anime</button>
                     <div class="list-anime-table">
                         <table>
                             <tr>
@@ -114,7 +114,7 @@ include '../koneksi.php';
         <!-- Modal -->
         <div id="formAddAnimeModal" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="close" onclick="document.getElementById('formAddAnimeModal').style.display='none'">&times;</span>
                 <h4 class="modal-title">Tambah Daftar Anime</h4>
                 <div class="form-add-anime">
                     <form action="add_anime_process.php" method="POST" enctype="multipart/form-data">
