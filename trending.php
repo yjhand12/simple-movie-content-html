@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>TRENDING</title>
 </head>
@@ -32,7 +31,7 @@
                         <a href="details.php?id=<?php echo $anime->id; ?>">
                             <div class="content-item">
                                 <div class="content-image">
-                                    <img src="img/<?php echo $anime->image; ?>" alt="content-image-<?php echo $anime->title; ?>" width="180px" height="250px">
+                                    <img src="assets/img/<?php echo $anime->image; ?>" alt="content-image-<?php echo $anime->title; ?>" width="180px" height="250px">
                                 </div>
                                 <div class="content-text">
                                     <p><span>Genre: </span><?php echo $anime->description; ?></p>

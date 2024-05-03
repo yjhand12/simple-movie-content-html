@@ -16,7 +16,6 @@ foreach ($list_anime as $anime) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title><?php echo $anime->title; ?></title>
 </head>
@@ -70,12 +69,12 @@ foreach ($list_anime as $anime) {
                         </a>
                     </div>
                     <div>
-                        <video controls="true" src="img/anime.mp4" class="anime-video" width="auto"></video>
+                        <video controls="true" src="assets/img/anime.mp4" class="anime-video" width="auto"></video>
                     </div>
                 </div>
                 <div class="anime-card">
                     <div class="card-details">
-                        <img src="img/<?php echo $anime->image; ?>" alt="detail-image" width="220px" height="300px" class="detail-image">
+                        <img src="assets/img/<?php echo $anime->image; ?>" alt="detail-image" width="220px" height="300px" class="detail-image">
                         <div class="anime-info">
                             <div class="anime-title">
                                 <h2 class="title"><?php echo $anime->title; ?></h2>

@@ -1,7 +1,7 @@
     <aside>
         <div class="sidebar-header">
             <h1>
-                <img src="img/logo.png" alt="logo" width="50px" height="50px">
+                <img src="assets/img/logo.png" alt="logo" width="50px" height="50px">
                 <a href="index.php">Urname</a>
             </h1>
         </div>
