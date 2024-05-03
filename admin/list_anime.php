@@ -143,3 +143,15 @@ include '../koneksi.php';
     ?>
 </body>
 </html>
+<script>
+    const activePage = window.location.pathname;
+    if (window.location.pathname === '/simple-movie-content-html/admin/') {
+        window.location.pathname = '/simple-movie-content-html/dashboard.php';
+    }
+    const navLink = document.querySelectorAll('.sidebar-body ul li a').
+    forEach(link => {
+        if(link.href.includes(`${activePage}`)){
+            link.parentElement.classList.add('active')
+        }
+    })
+</script>

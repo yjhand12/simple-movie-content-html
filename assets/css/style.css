@@ -292,14 +292,12 @@ footer{
     border-collapse: collapse;
 }
 .list-anime-table th, .list-anime-table td{
+    font-weight: normal;
     padding: 8px;
     border-bottom: 1px solid #ddd;
 }
 .list-anime-table tr th{
     background-color: #ffd863;
-}
-.list-anime-table tr:hover{
-    background-color: #fafafa;
 }
 .list-anime-table tr th,
 .list-anime-table tr td {

@@ -8,7 +8,7 @@
         <div class="sidebar-body">
             <ul>
                 <li><a href="dashboard.php"><i class="fas fa-home"></i><span>Dashboard</span></a></li>
-                <li><a href="list_anime.php"><i class="fas fa-fire"></i><span>List Anime</span></a></li>
+                <li><a href="list_anime.php"><i class="fas fa-film"></i><span>List Anime</span></a></li>
             </ul>
         </div>
     </aside>
