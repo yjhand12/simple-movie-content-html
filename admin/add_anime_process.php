@@ -2,10 +2,10 @@
 include '../koneksi.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $title = $_POST['title'];
-    $japanese_title = $_POST['japanese_title'];
-    $sinopsis = $_POST['sinopsis'];
-    $videos = $_POST['videos'];
+    $title = mysqli_real_escape_string($connection, $_POST['title']);
+    $japanese_title = mysqli_real_escape_string($connection, $_POST['japanese_title']);
+    $sinopsis = mysqli_real_escape_string($connection, $_POST['sinopsis']);
+    $videos = mysqli_real_escape_string($connection, $_POST['videos']);
 
     $target_dir = "../assets/img/";
     $image_hash = hash('sha256', basename($_FILES["image"]["name"]) . time());
