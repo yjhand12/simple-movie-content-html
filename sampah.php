@@ -3,6 +3,19 @@ include 'koneksi.php';
 
 $query = "SELECT * FROM anime_list";
 $result = mysqli_query($connection, $query);
+
+// Ambil hasil kueri dan simpan dalam array
+$animeList = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $animeList[] = $row;
+}
+
+// Fungsi untuk membandingkan judul anime
+function compareTitles($a, $b) {
+    return strcmp($a['title'], $b['title']);
+}
+
+usort($animeList, 'compareTitles');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,8 +41,7 @@ $result = mysqli_query($connection, $query);
                 </div>
                 <div class="content-list">
                 <?php
-
-                foreach ($result as $anime) {
+                foreach ($animeList as $anime) {
                     ?>
                     <div class="content-box">
                         <a href="details.php">
@@ -38,7 +50,7 @@ $result = mysqli_query($connection, $query);
                                     <img src="assets/img/<?php echo $anime['image']; ?>" alt="content-image-<?php echo $anime['image']; ?>" width="180px" height="250px">
                                 </div>
                                 <div class="content-text">
-                                    <p><span>Genre: </span><?php echo $anime['image'];; ?></p>
+                                    <p><span>Genre: </span><?php echo $anime['genre']; ?></p>
                                     <h3><?php echo $anime['title']; ?></h3>
                                 </div>
                             </div>
