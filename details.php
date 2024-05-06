@@ -1,14 +1,11 @@
 <?php
-$list_anime = include_once 'list_anime.php';
+include 'koneksi.php';
+
 $id = $_GET['id'];
 
-$selectedAnime = null;
-foreach ($list_anime as $anime) {
-    if ($anime->id == $id) {
-            $selectedAnime = $anime;
-            break;
-            }
-    }
+$query = "SELECT * FROM anime_list WHERE id = $id";
+$result = mysqli_query($connection, $query);
+$anime = mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +14,7 @@ foreach ($list_anime as $anime) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <title><?php echo $anime->title; ?></title>
+    <title><?php echo $anime['title']; ?></title>
 </head>
 <body>
     <?php
@@ -69,16 +66,17 @@ foreach ($list_anime as $anime) {
                         </a>
                     </div>
                     <div>
-                        <video controls="true" src="assets/img/anime.mp4" class="anime-video" width="auto"></video>
+                    <iframe width="100%" src="https://www.youtube.com/embed/<?php echo $anime['videos']; ?>" class="anime-video" frameborder="0" allowfullscreen></iframe>
+
                     </div>
                 </div>
                 <div class="anime-card">
                     <div class="card-details">
-                        <img src="assets/img/<?php echo $anime->image; ?>" alt="detail-image" width="220px" height="300px" class="detail-image">
+                        <img src="assets/img/<?php echo $anime['image']; ?>" alt="detail-image-<?php echo $anime['image']; ?>" width="220px" height="300px" class="detail-image">
                         <div class="anime-info">
                             <div class="anime-title">
-                                <h2 class="title"><?php echo $anime->title; ?></h2>
-                                <h3 class="japanese-title"><?php echo $anime->title; ?></h3>
+                                <h2 class="title"><?php echo $anime['title']; ?></h2>
+                                <h3 class="japanese-title"><?php echo $anime['japanese_title']; ?></h3>
                             </div>
                             <div class="anime-description">
                                 <div class="left-description">
@@ -96,7 +94,7 @@ foreach ($list_anime as $anime) {
                                         <span>Fridays at 00.00 JST</span></h4>
                                     <h4 class="description">
                                         Genres : 
-                                        <span><?php echo $anime->description; ?></span></h4>
+                                        <span><?php echo $anime['genre']; ?></span></h4>
                                 </div>
                                 <div class="right-description">
                                     <h4 class="description">
@@ -118,12 +116,7 @@ foreach ($list_anime as $anime) {
                                 </div>
                             </div>
                             <p class="sinopsis">
-                            Where the average scores are the lowest, but the fights are the strongest. 
-                            Furin High School is renowned as a super school of delinquents. 
-                            Haruka Sakura, a first-year student, came from outside the city to fight to the top. 
-                            However, Furin High School has become a group that protects the town called the “Chime of the Wind Breaker” – Bofurin. 
-                            The heroic legend of high school delinquent Sakura begins here!
-                            </p>
+                            <?php echo $anime['sinopsis']; ?>
                         </div>
                     </div>
                 </div>

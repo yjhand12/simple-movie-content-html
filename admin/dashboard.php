@@ -21,7 +21,6 @@ include '../koneksi.php'
         ?>
         <div class="container">
             <div class="admin-content">
-                Jumlah judul
             </div>
         </div>
     </main>

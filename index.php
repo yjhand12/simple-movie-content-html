@@ -32,13 +32,13 @@ $result = mysqli_query($connection, $query);
                 foreach ($result as $anime) {
                     ?>
                     <div class="content-box">
-                        <a href="details.php">
+                        <a href="details.php?id=<?php echo $anime['id']; ?>">
                             <div class="content-item">
                                 <div class="content-image">
                                     <img src="assets/img/<?php echo $anime['image']; ?>" alt="content-image-<?php echo $anime['image']; ?>" width="180px" height="250px">
                                 </div>
                                 <div class="content-text">
-                                    <p><span>Genre: </span><?php echo $anime['image'];; ?></p>
+                                    <p><span>Genre: </span><?php echo $anime['genre'];; ?></p>
                                     <h3><?php echo $anime['title']; ?></h3>
                                 </div>
                             </div>

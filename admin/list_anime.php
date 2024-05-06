@@ -1,7 +1,6 @@
 <?php
 include '../koneksi.php';
 
-// Fungsi untuk menghapus anime dari database
 if(isset($_GET['delete_anime'])) {
     $anime_id = $_GET['delete_anime'];
     $query = "DELETE FROM anime_list WHERE id = $anime_id";
@@ -45,6 +44,7 @@ $result = mysqli_query($connection, $query);
                                 <th>No</th>
                                 <th>Title</th>
                                 <th>Japanese Title</th>
+                                <th>Genre</th>
                                 <th>Sinopsis</th>
                                 <th>Image</th>
                                 <th>Link Videos</th>
@@ -58,6 +58,7 @@ $result = mysqli_query($connection, $query);
                                     <td><?php echo $no++ ?></td>
                                     <td><?php echo $anime['title']; ?></td>
                                     <td><?php echo $anime['japanese_title']; ?></td>
+                                    <td><?php echo $anime['genre']; ?></td>
                                     <td>
                                         <?php 
                                         $sinopsis = $anime['sinopsis'];
@@ -69,9 +70,9 @@ $result = mysqli_query($connection, $query);
                                         ?>
                                     </td>
                                     <td><img src="../assets/img/<?php echo $anime['image']; ?>" alt="<?php echo $anime['title']; ?> " height="100px" width="auto"></td>
-                                    <td><a href=""><?php echo $anime['videos']; ?></a></td>
+                                    <td><a href="https://www.youtube.com/watch?v=<?php echo $anime['videos']; ?>"><?php echo $anime['videos']; ?></a></td>
                                     <td>
-                                        <button class="edit-data-button" onclick="openEditModal(<?php echo $anime['id']; ?>, '<?php echo $anime['title']; ?>', '<?php echo $anime['japanese_title']; ?>', '<?php echo $anime['sinopsis']; ?>', '<?php echo $anime['videos']; ?>')">Edit</button>
+                                        <button class="edit-data-button" onclick="openEditModal(<?php echo $anime['id']; ?>, '<?php echo $anime['title']; ?>', '<?php echo $anime['japanese_title']; ?>', '<?php echo $anime['genre']; ?>', '<?php echo $anime['sinopsis']; ?>', '<?php echo $anime['videos']; ?>')">Edit</button>
                                         <a href="?delete_anime=<?php echo $anime['id']; ?>" class="delete-data-button" style="text-decoration: none;">Delete</a>
                                     </td>
                                 </tr>
@@ -96,6 +97,9 @@ $result = mysqli_query($connection, $query);
                         
                         <label for="japanese_title">Japanese Title:</label><br>
                         <input type="text" id="japanese_title" name="japanese_title" required><br><br>
+
+                        <label for="japanese_title">Genre:</label><br>
+                        <input type="text" id="genre" name="genre" required><br><br>
                         
                         <label for="sinopsis">Sinopsis:</label><br>
                         <textarea id="sinopsis" name="sinopsis" rows="4" required></textarea><br><br>
@@ -123,6 +127,9 @@ $result = mysqli_query($connection, $query);
                         
                         <label for="editJapaneseTitle">Japanese Title:</label><br>
                         <input type="text" id="editJapaneseTitle" name="japanese_title" required><br><br>
+
+                        <label for="editGenre">Genre:</label><br>
+                        <input type="text" id="editGenre" name="genre" required><br><br>
                         
                         <label for="editSinopsis">Sinopsis:</label><br>
                         <textarea id="editSinopsis" name="sinopsis" rows="4" required></textarea><br><br>
@@ -155,11 +162,12 @@ $result = mysqli_query($connection, $query);
         }
     })
 
-    function openEditModal(animeId, title, japaneseTitle, sinopsis, videos) {
+    function openEditModal(animeId, title, japaneseTitle, genre, sinopsis, videos) {
         // Set nilai-nilai anime pada form modal edit
         document.getElementById('editAnimeId').value = animeId;
         document.getElementById('editTitle').value = title;
         document.getElementById('editJapaneseTitle').value = japaneseTitle;
+        document.getElementById('editGenre').value = genre;
         document.getElementById('editSinopsis').value = sinopsis;
         document.getElementById('editVideos').value = videos;
         // Tampilkan modal edit
