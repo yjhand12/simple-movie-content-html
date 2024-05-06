@@ -32,8 +32,8 @@ include '../koneksi.php'
 </html>
 <script>
     const activePage = window.location.pathname;
-    if (window.location.pathname === '/simple-movie-content-html/admin/') {
-        window.location.pathname = '/simple-movie-content-html/dashboard.php';
+    if (window.location.pathname === '/admin/') {
+        window.location.pathname = '/admin/dashboard.php';
     }
     const navLink = document.querySelectorAll('.sidebar-body ul li a').
     forEach(link => {

@@ -6,6 +6,10 @@ if(isset($_GET['delete_anime'])) {
     $anime_id = $_GET['delete_anime'];
     $query = "DELETE FROM anime_list WHERE id = $anime_id";
     $result = mysqli_query($connection, $query);
+    if($result) {
+        header("Location: list_anime.php");
+        exit();
+    }
 }
 
 $query = "SELECT * FROM anime_list";
@@ -141,8 +145,8 @@ $result = mysqli_query($connection, $query);
 </html>
 <script>
     const activePage = window.location.pathname;
-    if (window.location.pathname === '/simple-movie-content-html/admin/') {
-        window.location.pathname = '/simple-movie-content-html/dashboard.php';
+    if (window.location.pathname === '/admin/') {
+        window.location.pathname = '/admin/dashboard.php';
     }
     const navLink = document.querySelectorAll('.sidebar-body ul li a').
     forEach(link => {
