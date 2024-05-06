@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if ($success == 0) {
-        echo "<script>window.history.back();</script>";
+        echo "<script>window.location.href = 'list_anime.php';</script>";
         exit();
     } else {
         if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             } else {
                 echo "<script>window.alert('Error: " . $query . "<br>" . mysqli_error($connection) . "');</script>";
-                echo "<script>window.history.back();</script>"; // Kembali ke halaman sebelumnya
+                header("Location: list_anime.php"); // Kembali ke halaman list_anime.php
                 exit();
             }
         }
